@@ -10,7 +10,9 @@ Make sure you have your EEG data in numpy format. Depending on the training and 
 2. training_uncertainty_estimator.py: Trains the base uncertainty estimators. It requires the training EEG data and CNN models 
 3. Detecting-Patient-Uncertainty-in-Seizure-Detection: Added mathmatical logic and imported the uncertainty estimators required for uncertatinty prediction. It makes a prediction for patient level uncertainty.
 
-## Results 
+## Results
+![Alt text](results.png)
+
 ## TODO
 1. Codes for other OOD/uncertainty estimation methods. 
 2. Results
