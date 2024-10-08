@@ -1,0 +1,39 @@
+import numpy as np
+
+def features_for_each_metrics(cam_features, false_positives, true_positives, false_negatives, true_negatives):
+    """
+    Reshapes CAM features for different prediction categories (false positives, true positives,
+    false negatives, true negatives) into flattened arrays.
+
+    Args:
+        cam_features (list or np.ndarray): List or array containing CAM features for all samples.
+        false_positives (list): List of indices for false positive samples.
+        true_positives (list): List of indices for true positive samples.
+        false_negatives (list): List of indices for false negative samples.
+        true_negatives (list): List of indices for true negative samples.
+
+    Returns:
+        dict: A dictionary containing reshaped arrays for each category.
+    """
+    reshaped_features = {}
+
+    # Extract CAM features for each category
+    false_positives_arr = np.array(cam_features)[false_positives]
+    true_positives_arr = np.array(cam_features)[true_positives]
+    false_negatives_arr = np.array(cam_features)[false_negatives]
+    true_negatives_arr = np.array(cam_features)[true_negatives]
+
+    # Reshape CAM features into flattened arrays
+    n_samples, n_channels, n_features_per_channel = false_positives_arr.shape
+    reshaped_features['false_positives'] = np.reshape(false_positives_arr, (n_samples, n_channels * n_features_per_channel))
+    
+    n_samples, n_channels, n_features_per_channel = true_positives_arr.shape
+    reshaped_features['true_positives'] = np.reshape(true_positives_arr, (n_samples, n_channels * n_features_per_channel))
+    
+    n_samples, n_channels, n_features_per_channel = false_negatives_arr.shape
+    reshaped_features['false_negatives'] = np.reshape(false_negatives_arr, (n_samples, n_channels * n_features_per_channel))
+    
+    n_samples, n_channels, n_features_per_channel = true_negatives_arr.shape
+    reshaped_features['true_negatives'] = np.reshape(true_negatives_arr, (n_samples, n_channels * n_features_per_channel))
+    
+    return reshaped_features
