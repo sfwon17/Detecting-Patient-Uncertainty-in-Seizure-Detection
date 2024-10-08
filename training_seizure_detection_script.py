@@ -23,9 +23,9 @@ val_loader = DataLoader(val_dataset, batch_size=16, shuffle=False) # make sure s
 model = CNN().to("cuda:0") # A6000
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.0001, momentum=0.90, nesterov=False)
-epoch = 100
+epoch_count = 100
 
-for epoch in range(300):
+for epoch in range(epoch_count):
     epoch_loss = 0
     true_labels = []
     predicted_labels = []
@@ -92,3 +92,5 @@ for epoch in range(300):
         f"Loss: {epoch_loss:.4f} - Acc: {accuracy:.4f} - Recall: {epoch_recall:.4f} - "
         f"Val Loss: {epoch_val_loss:.4f} - Val Acc: {val_accuracy:.4f} - Val Recall: {epoch_val_recall:.4f}"
     )
+# save model
+torch.save(model.state_dict(), model.pth')
