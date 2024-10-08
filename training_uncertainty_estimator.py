@@ -8,6 +8,7 @@ from utils.predicted_indices import get_indices
 from utils.get_features import extract_cams
 from utils.reshape_features import features_for_each_metrics
 from pyod.models.deep_svdd import DeepSVDD
+import pickle
 
 # Import the model trained for seizure detection
 model = torch.load('seizure_detection_model.pth')
