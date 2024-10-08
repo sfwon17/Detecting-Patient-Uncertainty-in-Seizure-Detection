@@ -11,9 +11,9 @@ Make sure you have your EEG data in numpy format. Depending on the training and 
 3. Detecting-Patient-Uncertainty-in-Seizure-Detection: Added mathmatical logic and imported the uncertainty estimators required for uncertatinty prediction. It makes a prediction for patient level uncertainty.
 
 ## Results
+Our proposed method achieved the highest correlation coefficient when measuring the uncertainty scores for each patient against their F1-score.
 ![Alt text](results.png)
 
 ## TODO
 1. Codes for other OOD/uncertainty estimation methods. 
-2. Results
 3. Limitations
