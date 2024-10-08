@@ -93,4 +93,4 @@ for epoch in range(epoch_count):
         f"Val Loss: {epoch_val_loss:.4f} - Val Acc: {val_accuracy:.4f} - Val Recall: {epoch_val_recall:.4f}"
     )
 # save model
-torch.save(model.state_dict(), model.pth')
+torch.save(model.state_dict(), 'seizure_detection_model.pth')
