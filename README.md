@@ -1,5 +1,5 @@
 # Detecting-Patient-Uncertainty-in-Seizure-Detection
-The technique utilised mathematical logic and deep learning for uncertainty detection on patient level. It does not detect uncertainty on a specific segment/event/time. Users can replace the feature extractor method with their own method. It is compatible with most of the CNN models for seizure detection.
+The technique utilised mathematical logic and deep learning for uncertainty detection on patient level. It does not detect uncertainty on a specific segment/event/time. Users can replace the feature extractor method with their own method. It is compatible with most of the CNN models for seizure detection. Paper can be found [here](https://www.mdpi.com/1424-8220/23/20/8375) with dataset and evaluation. 
 
 ## Scenario
 Given a patient's EEG data containing hours of recordings, the algorithm assesses whether the trained model can confidently classify the entire recording at the patient level. By applying a confidence threshold, the algorithm determines the level of uncertainty in the model’s predictions on patient-level, ensuring safe and reliable assessment of EEG recordings. 
